@@ -8,7 +8,9 @@ from . import models
 
 
 class SchoolListView(ListView):
+    context_object_name = 'schools'
     model = models.School
+    # School List
 
 class SchoolDetailView(DetailView):
     model = models.School
