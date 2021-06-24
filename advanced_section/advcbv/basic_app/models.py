@@ -12,9 +12,9 @@ class School(models.Model):
 class Student(models.Model):
     name = models.CharField(max_length=256)
     age = models.PositiveIntegerField()
-    School = models.ForeignKey(School, related_name="Students")
+    School = models.ForeignKey(School, related_name="Students",on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
-        
-                
+
+
