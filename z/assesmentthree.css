@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    font-family: sans-serif;
+}
+table{
+    margin: auto;
+}
+.div{
+    border: 1px solid black;
+    width: 150px;
+    height: 300px;
+     margin: 0 10px;
+}
+#one{
+    background: #247ba0;
+}
+#two{
+    background: #70c1b3;
+}
+#three{
+    background:#b2dbbf;
+}
+#four{
+    background: #f3ffbd;
+}
+#five{
+    background: #ff1654;
+}

@@ -1,0 +1,31 @@
+body{
+    font-family: Akaya Telivigala;
+}
+h1{
+    text-align: center;
+}
+.table{
+    margin: 0 auto;
+}
+td{
+
+    width: 150px;
+    height: 300px;
+    border: 6px solid white;
+
+}
+#one{
+    background:#247ba0;
+}
+#two{
+    background: #70c1b3;
+}
+#three{
+    background:#b2dbbf;
+}
+#four{
+    background: #f3ffbd;
+}
+#five{
+    background: #ff1654;
+}

@@ -1,0 +1,23 @@
+body{
+    background-color: #b0e0e6;
+}
+h1{
+    border: solid 2px black;
+}
+.p{
+    background: #fffca5;
+}
+h2{
+    color: purple;
+}
+.one{
+    color: purple;
+    text-decoration: overline;
+}
+input{
+    border: solid 2px purple;
+}
+.last{
+    background: blue;
+    border:4px yellow dashed ;
+}

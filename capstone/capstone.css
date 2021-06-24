@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    background-color: #011627;
+    color: white;
+    border: solid 60px blue;
+    border-top: 0px;
+    margin: 0;
+}
+p{
+    margin: 10px 40px;
+    text-align: center;
+}
+input{
+    border: 10px solid white;
+}
+#x{
+    margin-top: 20px;
+    border: solid black 4px;
+    font-size: 60px;
+    background: yellow;
+    border-radius: 30%;
+}

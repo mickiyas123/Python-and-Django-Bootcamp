@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    font-weight: bold;
+}
+button {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: black solid 6px;
+    border-radius:50%;
+    margin: 1px;
+}

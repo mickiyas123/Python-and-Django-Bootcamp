@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django 2</title>
+</head>
+<body>
+    <h1>Here are your users:</h1>
+    {% if full_info %}
+    {% for info in full_info%}
+    <ol> 
+        <li> User Info</li>
+    <ul>
+      <li>{{info.first_name}}</li>
+      <li>{{info.last_name}}</li>
+      <li>{{info.email}}</li>
+    </ul>
+    </ol> 
+    {% endfor %}
+    {% endif %}  
+
+</body>
+</html>
