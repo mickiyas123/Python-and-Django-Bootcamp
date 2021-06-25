@@ -4,6 +4,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-class CBView(View):
-    def get(self,request):
-        return HttpResponse("Class Based Views Are Cool!")
+
