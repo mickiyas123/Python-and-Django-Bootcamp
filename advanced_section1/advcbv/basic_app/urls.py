@@ -7,7 +7,5 @@ app_name = 'basic_app'
 urlpatterns = [
   path('',views.SchoolListView.as_view(),name='list'),
   url(r'^(?P<pk>\d+)/$',views.SchoolDetailView.as_view(),name='detail'),
-  path('create',views.SchoolCreateView.as_view(),name='create')
-
-
+  path('create/',views.SchoolCreateView.as_view(),name='create')
 ]
