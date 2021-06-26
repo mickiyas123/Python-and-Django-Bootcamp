@@ -5,7 +5,7 @@ app_name = 'basic_app'
 
 urlpatterns = [
   path('',views.SchoolListView.as_view(),name='list'),
-  
+  path('(?P<pk>[-\w]+)/',views.SchoolDetailView.as_view(),name='detail')
 
 
 ]
