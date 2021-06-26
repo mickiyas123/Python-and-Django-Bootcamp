@@ -5,6 +5,7 @@ app_name = 'basic_app'
 
 urlpatterns = [
   path('',views.SchoolListView.as_view(),name='list'),
+  
 
 
 ]
