@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import View,TemplateView,ListView,DetailView
+from django.views.generic import (View,TemplateView,
+                                  ListView,DetailView,
+                                  CreateView,UpdateView,
+                                  DeleteView)
 from django.http import HttpResponse
 from . import models
 
