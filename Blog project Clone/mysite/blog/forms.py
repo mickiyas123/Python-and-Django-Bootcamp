@@ -1,6 +1,7 @@
 # import the neccessary module and models
 from django import forms
 from django.db.models import fields
+from django.forms import widgets
 from blog.models import Post,Comment
 from mysite.blog import models
 
@@ -14,6 +15,12 @@ class PostForm(forms.ModelForm):
         model = Post
         # connects to the fields neccessary
         fields = ('author','title','text')
+        
+        # this will make it connect to the css classes
+        widgets ={
+            'title':forms.Textarea(attrs={'class':'textinputclass'}),
+            'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea '})
+        }
 
 # a class for creating forms for the comment based on the models
 class CommentForm(forms.ModelForm):
