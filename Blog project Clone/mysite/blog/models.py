@@ -25,7 +25,11 @@ class Post(models.model):
 
     # a method for approving comments on the content of the post
     def approve_comment(self):
-        return self.comments.filter(approved_comments=True)
+        return self.comments.filter(approved_comment=True)
+
+    # a method for what django should do after creating the post
+    def get_absolute_url(self):
+        return reverse("post_detail",kwargs={'pk':'self.pk'})    
 
     # a method for returning the title of post
     def __str__(self):
@@ -45,6 +49,19 @@ class Comment(models.Model):
     
     # approving the comments with inital value false
     approved_comment = models.BooleanField(default=False)
+
+    # a method for approved comment
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    # a method for going back to the home page after writing the post 
+    def get_absolute_url(self):
+        return reverse('post_list')    
+
+    # a method for returning text of the comment    
+    def __str__(self):
+        return self.text
 
 
 
