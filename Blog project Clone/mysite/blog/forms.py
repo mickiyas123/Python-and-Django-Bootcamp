@@ -19,7 +19,7 @@ class PostForm(forms.ModelForm):
         # this will make it connect to the css classes
         widgets ={
             'title':forms.Textarea(attrs={'class':'textinputclass'}),
-            'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea '})
+            'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'})
         }
 
 # a class for creating forms for the comment based on the models
@@ -33,7 +33,8 @@ class CommentForm(forms.ModelForm):
 
         # this will make it connect to the css classes
         widgets={
-            'text':forms.Textarea(attrs={'class': 'textinputclass'})
+            'author':forms.Textarea(attrs={'class': 'textinputclass'}),
+            'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea'})
         }
 
 
