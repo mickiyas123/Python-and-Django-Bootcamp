@@ -1,10 +1,5 @@
-from django.conf import urls
-from django.urls import path
+import django
 
 
-app_name = 'blog'
-
-urlpatterns = [
-    path()
-
-]
+from django.conf.urls import url
+from blog import views
