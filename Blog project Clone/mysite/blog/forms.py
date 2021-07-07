@@ -31,5 +31,10 @@ class CommentForm(forms.ModelForm):
         # connects to the field necessary
         fields = ('author','text')
 
+        # this will make it connect to the css classes
+        widgets={
+            'text':forms.Textarea(attrs={'class': 'textinputclass'})
+        }
+
 
 
