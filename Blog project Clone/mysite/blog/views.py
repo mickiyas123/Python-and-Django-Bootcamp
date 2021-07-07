@@ -16,6 +16,7 @@ class PostListView(ListView):
 
     # Python version of sql for post that are greater than the current date and order them by desecending order
     def get_queryset(self):
+        # lte means less than or equal to
         return Post.objects.filter(published_date__lte = timezone.now().order_by('-published_date'))
 
 
