@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.views.generic.list import ListView
 from blog.models import Post,Comment
-from django.views.generic import (TemplateView,ListView)
+from django.views.generic import (TemplateView,ListView,DetailView)
 
 # Create your views here.
 
@@ -18,6 +18,8 @@ class PostListView(ListView):
     def get_queryset(self):
         # lte means less than or equal to
         return Post.objects.filter(published_date__lte = timezone.now().order_by('-published_date'))
+
+
 
 
         
