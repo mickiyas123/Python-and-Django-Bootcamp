@@ -51,7 +51,7 @@ class PostUpdateView(LoginRequiredMixin,UpdateView):
 
 # a class for deleting posts
 class PostDeleteView(LoginRequiredMixin,DeleteView):
-     # url to redirect to if user is nor logged in
+     # url to check if the post is deleted and go back to the homepage.
     success_url = reverse_lazy('post_list')
 
     form_class = PostForm
