@@ -21,7 +21,7 @@ class PostListView(ListView):
     # Python version of sql for post that are greater than the current date and order them by desecending order
     def get_queryset(self):
         # lte means less than or equal to
-        return Post.objects.filter(published_date__lte = timezone.now().order_by('-published_date'))
+        return Post.objects.filter(published_date__lte = timezone.now()).order_by('-published_date')
 
 # a class for dteails of the post
 class PostDetailView(DetailView):
@@ -56,7 +56,7 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
 
     model = Post
 
-# 
+# a class to see the unpublished posts
 class DraftListView(LoginRequiredMixin,ListView):
     login_url = '/login'
     redirect_field_name = 'blog/post_list.html'
