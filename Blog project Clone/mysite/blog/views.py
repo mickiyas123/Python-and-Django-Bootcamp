@@ -19,6 +19,10 @@ class PostListView(ListView):
         # lte means less than or equal to
         return Post.objects.filter(published_date__lte = timezone.now().order_by('-published_date'))
 
+# a class for dteails of the post
+class PostDetailView(DetailView):
+    model = Post        
+
 
 
 
