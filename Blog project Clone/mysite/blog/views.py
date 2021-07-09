@@ -54,9 +54,20 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
      # url to check if the post is deleted and go back to the homepage.
     success_url = reverse_lazy('post_list')
 
-    form_class = PostForm
+    model = Post
+
+# 
+class DraftListView(LoginRequiredMixin,ListView):
+    login_url = '/login'
+    redirect_field_name = 'blog/post_list.html'
+    model = Post
+
+    def get_queryset(self):
+        return Post.objects.filter(published_date__isnull= True).order_by('created_date')
 
     
+
+
 
 
         
