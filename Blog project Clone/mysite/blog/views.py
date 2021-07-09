@@ -1,9 +1,9 @@
 from django.forms.forms import Form
-from django.forms.widgets import MediaDefiningClass
 from django.shortcuts import render
 from blog.forms import PostForm, CommentForm
 from django.utils import timezone
 from blog.models import Post,Comment
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView)
@@ -52,8 +52,7 @@ class PostUpdateView(LoginRequiredMixin,UpdateView):
 # a class for deleting posts
 class PostDeleteView(LoginRequiredMixin,DeleteView):
      # url to redirect to if user is nor logged in
-    login_url = '/login/'
-    redirect_field_name = 'blog/post_deatil.html'
+    success_url = reverse_lazy('post_list')
 
     form_class = PostForm
 
