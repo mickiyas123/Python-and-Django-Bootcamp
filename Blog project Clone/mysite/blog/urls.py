@@ -17,6 +17,8 @@ urlpatterns = [
     # url to edit posts
     url(r'post/(?P<pk>\d+)/edit/$',views.PostUpdateView.as_view(),name='post_edit'),
     # url to delete posts
-    url(r'post/(?P<pk>\d+)/remove/$',views.PostDeleteView.as_view(), name='post_remove')
+    url(r'post/(?P<pk>\d+)/remove/$',views.PostDeleteView.as_view(), name='post_remove'),
+    # path to the drafts
+    path('drafts/',views.DraftListView.as_view(),name='post_draft_list')
 
 ]
