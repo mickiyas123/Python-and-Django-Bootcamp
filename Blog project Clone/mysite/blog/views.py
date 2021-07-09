@@ -6,7 +6,7 @@ from django.utils import timezone
 from blog.models import Post,Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import (TemplateView,ListView,DetailView,CreateView,UpdateView)
+from django.views.generic import (TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView)
 
 # Create your views here.
 
@@ -48,6 +48,15 @@ class PostUpdateView(LoginRequiredMixin,UpdateView):
     form_class = PostForm
     
     model = Post
+
+# a class for deleting posts
+class PostDeleteView(LoginRequiredMixin,DeleteView):
+     # url to redirect to if user is nor logged in
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_deatil.html'
+
+    form_class = PostForm
+
     
 
 
