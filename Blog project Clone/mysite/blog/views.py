@@ -1,8 +1,11 @@
+from django.forms.forms import Form
 from django.shortcuts import render
+from blog.forms import PostForm, CommentForm
 from django.utils import timezone
-from django.views.generic.list import ListView
 from blog.models import Post,Comment
-from django.views.generic import (TemplateView,ListView,DetailView)
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import (TemplateView,ListView,DetailView,CreateView)
 
 # Create your views here.
 
@@ -21,8 +24,18 @@ class PostListView(ListView):
 
 # a class for dteails of the post
 class PostDetailView(DetailView):
-    model = Post        
+    model = Post   
 
+
+# a class for creating post but only if you are logged in
+class CreatePostView(LoginRequiredMixin,CreateView):
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_deatil.html'
+
+    form_class = PostForm 
+
+
+    model = Post
 
 
 
