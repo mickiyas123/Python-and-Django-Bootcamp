@@ -11,6 +11,8 @@ urlpatterns = [
     path('about/',views.Aboutview.as_view(),name = 'about'),
     # url for accessing the post detail using regular expression
     url(r'post/(?P<pk>\d+)$',views.PostDetailView.as_view(),name = 'post_detail'),
-    #
-    path('postnew/',views.CreatePostView.as_view(), name='post_new')
+    # path to create a new post
+    path('postnew/',views.CreatePostView.as_view(), name='post_new'),
+    # url to edit posts
+    url(r'post/(?P<pk>\d+)/edit/$',views.PostUpdateView.as_view,name='post_edit')
 ]
