@@ -19,3 +19,7 @@ class PostListView(ListView):
     # a query to get the latest posts
     def get_queryset(self):
         return Post.objects.filter(publish_date__lte = timezone.now()).order_by('-publish_date')
+
+#  a class for detail page of the post
+class DetailListView(DetailView):
+    model = Post        
