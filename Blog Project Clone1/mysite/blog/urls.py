@@ -15,6 +15,8 @@ urlpatterns = [
     # route to edit the post
     url(r'^post/(?P<pk>\d+)/edit/',views.PostUpdateView.as_view(),name='post_edit'),
     # route to delete a post
-    url(r'^post/(?P<pk>\d+)/remove/',views.PostDeleteView.as_view,name = 'post_remove')
+    url(r'^post/(?P<pk>\d+)/remove/',views.PostDeleteView.as_view,name = 'post_remove'),
+    # route to see the unpublished posts
+    path('drafts/',views.DraftListView.as_view(),name = 'post_draft_lift')
     
 ]
