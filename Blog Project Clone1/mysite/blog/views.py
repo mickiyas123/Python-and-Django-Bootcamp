@@ -53,3 +53,13 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
     model = Post
     # after deleting a post it will go to list of the post
     success_url = reverse_lazy('post_list')
+
+# a class to see the unpublished posts
+class DraftListView(LoginRequiredMixin,ListView):
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_list.html'
+    model = Post
+
+    # a method to return list of the post with specific value
+    def get_queryset(self):
+        return Post.objects.filter(publish_date_isnull = True).order_by('created_day')
