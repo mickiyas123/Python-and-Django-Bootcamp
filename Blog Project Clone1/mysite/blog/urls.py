@@ -13,6 +13,8 @@ urlpatterns = [
     # route to creating a new post
     path('post/new',views.CreatePostView.as_view,name="post_new"),
     # route to edit the post
-    url(r'^post/(?P<pk>+d+)/edit/',views.PostUpdateView.as_view(),name='post_edit')
+    url(r'^post/(?P<pk>\d+)/edit/',views.PostUpdateView.as_view(),name='post_edit'),
+    # route to delte a post
+    url(r'^post/(?P<pk>\d+)/remove/',views.PostDeleteView.as_view,name = 'post_remove')
     
 ]
