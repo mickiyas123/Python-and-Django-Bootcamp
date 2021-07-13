@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from blog.forms import PostForm
 from django.views.generic import (View,CreateView,TemplateView,
-                                  ListView,DeleteView,DetailView)
+                                  ListView,DeleteView,DetailView,UpdateView)
 from blog.models import Post,Comment
 
 
@@ -34,4 +34,12 @@ class CreatePostView(LoginRequiredMixin,CreateView):
     redirect_field_name = 'blog/post_detail.html'
 
     form_class = PostForm
-    model = Post          
+    model = Post 
+
+class  PostUpdateView(LoginRequiredMixin, UpdateView):
+    # take them to login page
+    login_url  = '/login/'
+    # redirect to the detail view
+    redirect_field_name = 'blog/post_detail.html'
+    form_class  = PostForm
+    model = Post
