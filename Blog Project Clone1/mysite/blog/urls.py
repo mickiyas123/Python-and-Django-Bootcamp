@@ -11,6 +11,8 @@ urlpatterns = [
     # route to detail of the posts
     url(r'^post/(?P<pk>\d+)$',views.PostListView.as_view(),name="post_detail"),
     # route to creating a new post
-    path('post/new',views.CreatePostView.as_view,name="post_new")
+    path('post/new',views.CreatePostView.as_view,name="post_new"),
+    # route to edit the post
+    url(r'^post/(?P<pk>+d+)/edit/',views.PostUpdateView.as_view(),name='update_post')
     
 ]
