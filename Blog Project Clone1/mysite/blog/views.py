@@ -1,6 +1,9 @@
 from django.db import models
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from blog.forms import PostForm
 from django.views.generic import (View,CreateView,TemplateView,
                                   ListView,DeleteView,DetailView)
 from blog.models import Post,Comment
@@ -22,4 +25,13 @@ class PostListView(ListView):
 
 #  a class for detail page of the post
 class PostDetailView(DetailView):
-    model = Post        
+    model = Post  
+
+class CreatePostView(LoginRequiredMixin,CreateView):
+    # take them to login page
+    login_url  = '/login/'
+    # redirect to the detail view
+    redirect_field_name = 'blog/post_detail.html'
+
+    form_class = PostForm
+    model = Post          
