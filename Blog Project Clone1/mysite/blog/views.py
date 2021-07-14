@@ -96,3 +96,11 @@ def comment_approve(request,pk):
     # redirecting to the post detail page
     return redirect('post_detail.html',pk=comment.post.pk)
 
+# a function based view for deleting comments
+@login_required
+def remove_comment(request,pk):
+    comment = get_object_or_404(Comment,pk=pk)
+    post_pk = comment.post.pk
+    comment.delete()
+    return redirect('post_detail',pk=post_pk)
+
