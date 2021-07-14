@@ -68,8 +68,15 @@ class DraftListView(LoginRequiredMixin,ListView):
 ##################################################################
 ##################################################################'
 
-# a function view to comment on posts
+# a function to publish draft posts
+@login_required
+def post_publish(request,pk):
+    post =get_object_or_404(Post,pk=pk)
+    post.publish()
+    return redirect('post_detail',pk=pk)
 
+
+# a function view to comment on posts
 @login_required
 def add_comments_to_post(request,pk):
     post = get_object_or_404(Post,pk=pk)
