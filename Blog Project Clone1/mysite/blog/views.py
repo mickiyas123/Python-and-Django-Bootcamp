@@ -69,6 +69,7 @@ class DraftListView(LoginRequiredMixin,ListView):
 ##################################################################'
 
 # a function view to comment on posts
+
 @login_required
 def add_comments_to_post(request,pk):
     post = get_object_or_404(Post,pk=pk)
@@ -82,4 +83,16 @@ def add_comments_to_post(request,pk):
             return redirect('post_detail.html',pk=post.pk)
     else:
         form = CommentForm()
-    return render(request,'blog/comment_form.html',{'form':form})            
+    return render(request,'blog/comment_form.html',{'form':form})   
+
+
+# a function based view for comment approval
+@login_required
+def approve_commment(request,pk):
+    # to get the comment 
+    comment = get_object_or_404(Comment,pk=pk)
+    # calling the approve method in models.py
+    comment.approve()
+    # redirecting to the post detail page
+    return redirect('post_detail.html',pk=comment.post.pk)
+
