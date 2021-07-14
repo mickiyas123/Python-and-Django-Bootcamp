@@ -17,6 +17,8 @@ urlpatterns = [
     # route to delete a post
     url(r'^post/(?P<pk>\d+)/remove/',views.PostDeleteView.as_view,name = 'post_remove'),
     # route to see the unpublished posts
-    path('drafts/',views.DraftListView.as_view(),name = 'post_draft_lift')
+    path('drafts/',views.DraftListView.as_view(),name = 'post_draft_lift'),
+    # route to see the comments on the post
+    url(r'^post/(?P<pk>\d+)/comment',views.add_comments_to_post,name="add_comment_to_post")
     
 ]
