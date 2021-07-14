@@ -88,7 +88,7 @@ def add_comments_to_post(request,pk):
 
 # a function based view for comment approval
 @login_required
-def approve_commment(request,pk):
+def comment_approve(request,pk):
     # to get the comment 
     comment = get_object_or_404(Comment,pk=pk)
     # calling the approve method in models.py

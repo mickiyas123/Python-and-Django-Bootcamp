@@ -19,6 +19,8 @@ urlpatterns = [
     # route to see the unpublished posts
     path('drafts/',views.DraftListView.as_view(),name = 'post_draft_lift'),
     # route to see the comments on the post
-    url(r'^post/(?P<pk>\d+)/comment',views.add_comments_to_post,name="add_comment_to_post")
+    url(r'^post/(?P<pk>\d+)/comment',views.add_comments_to_post,name="add_comment_to_post"),
+    # route to approve comments
+    url('comment/(?P<pk>\d+)/approve/',views.comment_approve,name="comment_approve")
     
 ]
