@@ -24,7 +24,7 @@ urlpatterns = [
     url('comment/(?P<pk>\d+)/approve/',views.comment_approve,name="comment_approve"),
     # route to delete comments
     url('comment/(?P<pk>\d+)/approve/',views.remove_comment,name='remove_comment'),
-    # 
+    # route to publshing drafts
     url(r'^post/(?P<pk>\d+)/publish',views.post_publish,name="post_publish")
 
     
